@@ -1,0 +1,5 @@
+﻿  Source.cpp
+C:\Users\Артем\source\repos\Dice\Dice\Source.cpp(14,16): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Артем\source\repos\Dice\Dice\Source.cpp(54,16): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Артем\source\repos\Dice\Dice\Source.cpp(70,16): warning C4018: <: несоответствие типов со знаком и без знака
+  Dice.vcxproj -> C:\Users\Артем\source\repos\Dice\Debug\Dice.exe
