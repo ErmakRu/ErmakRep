@@ -1,0 +1,8 @@
+﻿  UnitTestLab3.cpp
+C:\Users\Артем\source\repos\Lab3\Lab3\Header.h(116,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Артем\source\repos\Lab3\Lab3\Header.h(143): message : выполняется компиляция ссылки на экземпляр шаблон функции "Performance StartTest<int,main::<lambda_ed8ad56fcbe2697eab0bd3004acda81c>>(int,Compare)"
+          with
+          [
+              Compare=main::<lambda_ed8ad56fcbe2697eab0bd3004acda81c>
+          ]
+  UnitTestLab3.vcxproj -> C:\Users\Артем\source\repos\Lab3\Debug\UnitTestLab3.dll

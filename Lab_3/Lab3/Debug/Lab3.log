@@ -1,0 +1,8 @@
+﻿  Source.cpp
+C:\Users\Артем\source\repos\Lab3\Lab3\Source.cpp(116,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Артем\source\repos\Lab3\Lab3\Source.cpp(143): message : выполняется компиляция ссылки на экземпляр шаблон функции "Performance StartTest<int,main::<lambda_c905945e1178ff14a5022b4780ad278c>>(int,Compare)"
+          with
+          [
+              Compare=main::<lambda_c905945e1178ff14a5022b4780ad278c>
+          ]
+  Lab3.vcxproj -> C:\Users\Артем\source\repos\Lab3\Debug\Lab3.exe
