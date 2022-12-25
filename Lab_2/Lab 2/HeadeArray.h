@@ -7,43 +7,43 @@ template <typename T>
 class ArrayClass final
 {
 private:
-    int a_size; // размер массива
-    int a_capacity; // память на 1 элемент
+    int a_size; // Г°Г Г§Г¬ГҐГ° Г¬Г Г±Г±ГЁГўГ 
+    int a_capacity; // ГЇГ Г¬ГїГІГј Г­Г  1 ГЅГ«ГҐГ¬ГҐГ­ГІ
     T* a_data;
     const int caparacityMod = 2;
 
 public:
-    //Получение стандартного запаса массива
+    //ГЏГ®Г«ГіГ·ГҐГ­ГЁГҐ Г±ГІГ Г­Г¤Г Г°ГІГ­Г®ГЈГ® Г§Г ГЇГ Г±Г  Г¬Г Г±Г±ГЁГўГ 
     int defaultCapacity() const 
     {
         return 8;
     }
-    //Получение адреса массива
+    //ГЏГ®Г«ГіГ·ГҐГ­ГЁГҐ Г Г¤Г°ГҐГ±Г  Г¬Г Г±Г±ГЁГўГ 
     T* data() const
     {
         return a_data;
     }
-    //Получение размера массива
+    //ГЏГ®Г«ГіГ·ГҐГ­ГЁГҐ Г°Г Г§Г¬ГҐГ°Г  Г¬Г Г±Г±ГЁГўГ 
     int size() const
     {
         return a_size;
     }
-    //Получение объема массива
+    //ГЏГ®Г«ГіГ·ГҐГ­ГЁГҐ Г®ГЎГєГҐГ¬Г  Г¬Г Г±Г±ГЁГўГ 
     int capacity() const
     {
         return a_capacity;
     }
-    //Констанстный оператор индексирования
+    //ГЉГ®Г­Г±ГІГ Г­Г±ГІГ­Г»Г© Г®ГЇГҐГ°Г ГІГ®Г° ГЁГ­Г¤ГҐГЄГ±ГЁГ°Г®ГўГ Г­ГЁГї
     const T& operator[] (int index) const 
     {
         return a_data[index];
     }
-    //Оператор индексирования
+    //ГЋГЇГҐГ°Г ГІГ®Г° ГЁГ­Г¤ГҐГЄГ±ГЁГ°Г®ГўГ Г­ГЁГї
     T& operator[] (int index) 
     {
         return a_data[index];
     }
-    //Копирующий конструктор
+    //ГЉГ®ГЇГЁГ°ГіГѕГ№ГЁГ© ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г°
     ArrayClass(const ArrayClass& other) 
     {
         a_data = (T*)malloc(sizeof(T) * other.a_capacity);
@@ -53,7 +53,7 @@ public:
         a_size = other.a_size;
         a_capacity = other.a_capacity;
     }
-    //Копирующий оператор присваивания 
+    //ГЉГ®ГЇГЁГ°ГіГѕГ№ГЁГ© Г®ГЇГҐГ°Г ГІГ®Г° ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГї 
     void swap(ArrayClass& other) 
     {
         std::swap(a_data, other.a_data);
@@ -66,7 +66,7 @@ public:
         swap(b_data);
         return *this;
     }
-    //Перемещающий конструктор
+    //ГЏГҐГ°ГҐГ¬ГҐГ№Г ГѕГ№ГЁГ© ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г°
     ArrayClass(ArrayClass&& other) 
     {
         a_data = other.a_data;
@@ -76,7 +76,7 @@ public:
         other.a_size = 0;
         other.a_capacity = 0;
     }
-    //Перемещающий оператор присваивания
+    //ГЏГҐГ°ГҐГ¬ГҐГ№Г ГѕГ№ГЁГ© Г®ГЇГҐГ°Г ГІГ®Г° ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГї
     ArrayClass& operator=(ArrayClass&& other)
     {
         if (this != &other) 
@@ -96,21 +96,21 @@ public:
         return *this;
     }
 
-    ArrayClass() //Конструктор по умолчанию
+    ArrayClass() //ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЇГ® ГіГ¬Г®Г«Г·Г Г­ГЁГѕ
     {
         a_size = 0;
         a_capacity = 8;
         a_data = (T*)malloc(a_capacity * sizeof(T));
     }
 
-    ArrayClass(int caparacity) // Конструктор со значением памяти на один элемент
+    ArrayClass(int caparacity) // ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° Г±Г® Г§Г­Г Г·ГҐГ­ГЁГҐГ¬ ГЇГ Г¬ГїГІГЁ Г­Г  Г®Г¤ГЁГ­ ГЅГ«ГҐГ¬ГҐГ­ГІ
     {
         a_size = 0;
         a_capacity = caparacity;
         a_data = (T*)malloc(a_capacity * sizeof(T));
     }
 
-    ~ArrayClass() // дeструктор
+    ~ArrayClass() // Г¤eГ±ГІГ°ГіГЄГІГ®Г°
     {
         for (int i = 0; i < a_size; ++i)
         {
@@ -119,7 +119,7 @@ public:
         free(a_data);
     }
 
-    int insert(const T& value) //последнего элемента
+    int insert(const T& value) //ГЇГ®Г±Г«ГҐГ¤Г­ГҐГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ 
     {
         if (a_size == a_capacity)
         {
@@ -138,13 +138,13 @@ public:
         return a_size - 1;
     }
 
-    int insert(int index, const T& value) // по индексу
+    int insert(int index, const T& value) // ГЇГ® ГЁГ­Г¤ГҐГЄГ±Гі
     {
         if (index >= a_size)
         {
             insert(value);
         }
-        if (a_size >= a_capacity) // исправил == на >= хотя в теории сайза больше капасити быть не должно 
+        if (a_size >= a_capacity) // ГЁГ±ГЇГ°Г ГўГЁГ« == Г­Г  >= ГµГ®ГІГї Гў ГІГҐГ®Г°ГЁГЁ Г±Г Г©Г§Г  ГЎГ®Г«ГјГёГҐ ГЄГ ГЇГ Г±ГЁГІГЁ ГЎГ»ГІГј Г­ГҐ Г¤Г®Г«Г¦Г­Г® 
         {
             a_capacity *= caparacityMod;
             T* b_data = (T*)malloc(sizeof(T) * a_capacity);
@@ -164,21 +164,20 @@ public:
             free(a_data);
             a_data = b_data;
         }
-        else // ДОделать
+        else // Г„ГЋГ¤ГҐГ«Г ГІГј
         {
             for (int i = a_size; i > index; i--)
                 {
-                    a_data[i].~T();
                     new (a_data + i) T(std::move(a_data[i - 1]));
+                    a_data[i - 1].~T();
                 }
-            a_data[index].~T();
             new (a_data + index) T(value);
         }
         a_size++;
         return index;
     }
 
-    void remove(int index) // Доделать
+    void remove(int index) // Г„Г®Г¤ГҐГ«Г ГІГј
     {
         if ((index >= a_size || a_size == 0 || index < 0) == false)
         {
@@ -193,7 +192,7 @@ public:
         }
     }
 
-    // Итераторы
+    // Г€ГІГҐГ°Г ГІГ®Г°Г»
     class ConstIterator 
     {
     protected:
@@ -229,7 +228,7 @@ public:
             return ((curPtr_ >= arrayPtr_->a_data) && (curPtr_ <= arrayPtr_->a_data + (arrayPtr_->a_size - 1)));
         }
     };
-    //Итератор 
+    //Г€ГІГҐГ°Г ГІГ®Г° 
     class Iterator : public ConstIterator
     {
     public:
@@ -240,7 +239,7 @@ public:
             new (ConstIterator::curPtr_) T(value);
         }
     };
-    //Функции создания итераторов
+    //Г”ГіГ­ГЄГ¶ГЁГЁ Г±Г®Г§Г¤Г Г­ГЁГї ГЁГІГҐГ°Г ГІГ®Г°Г®Гў
     Iterator iterator() 
     {
         return Iterator(this, false);
